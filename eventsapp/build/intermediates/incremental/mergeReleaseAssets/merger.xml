@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config=":linkedin-sdk"><source path="C:\Users\Sakshi\Desktop\Seller\linkedin-sdk\build\intermediates\bundles\release\assets"/></dataSet><dataSet config="main"><source path="C:\Users\Sakshi\Desktop\Seller\eventsapp\src\main\assets"/><source path="C:\Users\Sakshi\Desktop\Seller\eventsapp\build\generated\assets\shaders\release"/></dataSet><dataSet config="release"><source path="C:\Users\Sakshi\Desktop\Seller\eventsapp\src\release\assets"/></dataSet></merger>
