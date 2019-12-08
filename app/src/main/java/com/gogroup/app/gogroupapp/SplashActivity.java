@@ -14,17 +14,14 @@ import android.widget.ImageView;
 
 import com.crashlytics.android.Crashlytics;
 import com.gogroup.app.gogroupapp.Adapters.AdapterFragmentPager;
-import com.gogroup.app.gogroupapp.Fragments.IntroFragment;
 import com.gogroup.app.gogroupapp.HelperClasses.GoGroup;
 import com.gogroup.app.gogroupapp.HelperClasses.UserPreferences;
 import com.gogroup.app.gogroupapp.HelperClasses.Utils;
-import com.gogroup.app.gogroupapp.Responses.ListResponse;
 import com.gogroup.app.gogroupapp.Seller.SellerDashboard;
 import com.gogroup.app.gogroupapp.User.UserDashboardNew;
 import com.google.firebase.FirebaseApp;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -53,7 +50,7 @@ public class SplashActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         FirebaseApp.initializeApp(this);
         Fabric.with(this, new Crashlytics());
-
+        skipIntro();
 //        try {
 //            PackageInfo info = getPackageManager().getPackageInfo(
 //                    "com.gogroup.app.gogroupapp",
