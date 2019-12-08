@@ -14,7 +14,7 @@ android {
         config {
             keyAlias 'key0'
             keyPassword 'android'
-            storeFile file('C:\\Users\\midixi\\Github\\repos\\Seller\\gogroups-key-new.jks')
+            storeFile file('C:\\Users\\midixi\\source\\repos\\Seller\\gogroups-key-new.jks')
             storePassword 'android'
         }
     }
