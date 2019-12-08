@@ -3,7 +3,7 @@
     <!--<string name="fb_login_protocol_scheme">fb124234418228962</string>-->
     <string name="com.twitter.sdk.android.CONSUMER_KEY">tOCoHq2PZo2CkFiRbcxqvgWFr</string>
     <string name="com.twitter.sdk.android.CONSUMER_SECRET">RqXC63TA73OzEEOrMQigisRZ0Jku6u2wsZBqdHbGnkvmuRTU5P</string>
-    <string name="app_name">GoGroup-Sellers</string>
+    <string name="app_name">Sellers</string>
     <string name="mesibo_token">eea9qr5swru10d32z58bx0whmztaafvpb7ni6vc3ree2g4nw3uypigp5tarn1g8f</string>
     <string name="chatCampAppId">6441163417230241792</string>
     <string name="option_login_screen_seller">Seller</string>
@@ -687,7 +687,7 @@
     <string name="validationSellerDetail">Please enter seller details</string>
     <string name="minUsers">Min. Users</string>
     <string name="minUsers2">Min users :</string>
-    <string name="costfortwo">Cost For Two :</string>
+    <string name="costfortwo">Cashback per user :</string>
     <string name="emailID">Email ID</string>
     <string name="contactSeller">Contact Seller</string>
     <string name="matchingCriteria">interest(s) found for your matching criteria</string>
@@ -814,5 +814,6 @@
     <string name="generated">Generated Coup.</string>
     <string name="mayBuyToInterest">I may buy so interested</string>
     <string name="title_activity_seller_dashboard_new">seller_dashboard_new</string>
+    <string name="maxcashback">Max Cashback: Rs</string>
 
 </resources>

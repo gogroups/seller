@@ -317,14 +317,14 @@ public class AddAdvertisement extends BaseActivity implements CallBackRecyclerIt
             adapterAddPhotos.setData(AddAdvertisement.this, null, data.getImagesDetails(), this);
         }
         tvPicTitle.setText(getString(R.string.uploadedPic));
-        etMinUsers.setText(selectedAdd.getMinUserCount());
+        //etMinUsers.setText(selectedAdd.getMinUserCount());
         //etMaxQuantity.setText(selectedAdd.getQuantityPerUser());
         etDealName.setText(selectedAdd.getAdvertisementName());
         etDetails.setText(selectedAdd.getAdvertisementDetails());
         etLocation.setText(selectedAdd.getLocation());
         etActualPrice.setText(selectedAdd.getActualPrice());
-        etpricefortwo.setText(selectedAdd.getCostfortwo());
-        etpriceforx.setText(selectedAdd.getCostforx());
+        etcashbackperuser.setText(selectedAdd.getCashbackperuser());
+        //etpriceforx.setText(selectedAdd.getCostforx());
         etOfferPrice.setText(selectedAdd.getOfferPrice());
         etLocation.setAdapter(new GooglePlacesAutocompleteAdapter(this, R.layout.spinner_item));
 
@@ -904,12 +904,12 @@ public class AddAdvertisement extends BaseActivity implements CallBackRecyclerIt
             postFields.put("advertisement_name", etDealName.getText().toString().trim());
             postFields.put("deal_details", etDetails.getText().toString());
             postFields.put("end_date", etEnds.getText().toString().trim());
-            postFields.put("min_user_count", etMinUsers.getText().toString().trim());
-            postFields.put("quantity_per_user", etMaxQuantity.getText().toString().trim());
+            //postFields.put("min_user_count", etMinUsers.getText().toString().trim());
             postFields.put("actual_price",etActualPrice.getText().toString().trim());
             postFields.put("offer_price", etOfferPrice.getText().toString().trim());
-            postFields.put("costfor_two", etpricefortwo.getText().toString().trim());
-            postFields.put("costfor_x",etpriceforx.getText().toString().trim());
+            postFields.put("cashback_per_user", etcashbackperuser.getText().toString().trim());
+            //postFields.put("costfor_two", etcashbackperuser.getText().toString().trim());
+            //postFields.put("costfor_x",etpriceforx.getText().toString().trim());
             showProgressbar();
             RestClient.get().editAdvertisement(UserPreferences.getInstance().getToken(), postFields).
                     enqueue(new Callback<PostResponse>() {
@@ -919,8 +919,8 @@ public class AddAdvertisement extends BaseActivity implements CallBackRecyclerIt
                                 if (response.body().isStatus()) {
                                     Intent intent = new Intent();
                                     String[] data = {response.body().getData().getEndDate(), cg1, cg2, cg3, cg4, cg5, cg6, etLocation.getText().toString(),
-                                            etMinUsers.getText().toString().replaceFirst("^0*", ""),/*etMaxQuantity.getText().toString().replaceFirst("^0*", ""),*/ tvTotalGroups.getText().toString(),
-                                    etDealName.getText().toString(),etDetails.getText().toString(),etActualPrice.getText().toString(),etOfferPrice.getText().toString(),etpricefortwo.getText().toString(),etpriceforx.getText().toString()};
+                                            /*etMaxQuantity.getText().toString().replaceFirst("^0*", ""),*/ tvTotalGroups.getText().toString(),
+                                            etDealName.getText().toString(), etDetails.getText().toString(), etActualPrice.getText().toString(), etOfferPrice.getText().toString(), etcashbackperuser.getText().toString(),};
                                     intent.putExtra(BaseActivity.DATA, data);
                                     setResult(BaseActivity.REFRESH_ACTIVITY, intent);
                                     finish();
@@ -966,12 +966,11 @@ public class AddAdvertisement extends BaseActivity implements CallBackRecyclerIt
             postFields.put("deal_details", Utils.requestBody(etDetails.getText().toString().trim()));
             postFields.put("start_date", Utils.requestBody(etStarts.getText().toString().trim()));
             postFields.put("end_date", Utils.requestBody(etEnds.getText().toString().trim()));
-            postFields.put("min_user_count", Utils.requestBody(etMinUsers.getText().toString().trim()));
-            postFields.put("quantity_per_user", Utils.requestBody(etMaxQuantity.getText().toString().trim()));
+            //postFields.put("min_user_count", Utils.requestBody(etMinUsers.getText().toString().trim()));
             postFields.put("actual_price", Utils.requestBody(etActualPrice.getText().toString().trim()));
             postFields.put("offer_price", Utils.requestBody(etOfferPrice.getText().toString().trim()));
-            postFields.put("costfor_two", Utils.requestBody(etpricefortwo.getText().toString().trim()));
-            postFields.put("costfor_x",Utils.requestBody(etpriceforx.getText().toString().trim()));
+            postFields.put("cashback_per_user", Utils.requestBody(etcashbackperuser.getText().toString().trim()));
+            //postFields.put("costfor_x",Utils.requestBody(etpriceforx.getText().toString().trim()));
             List<MultipartBody.Part> multipartImg = new ArrayList<>();
             for (int i = 0; i < uriImageList.size(); i++) {
                 File file = Utils.reduceImageSize(new File(Utils.getPath(uriImageList.get(i), AddAdvertisement.this)));
@@ -1054,18 +1053,12 @@ public class AddAdvertisement extends BaseActivity implements CallBackRecyclerIt
     EditText etDetails;
     @BindView(R.id.etDealName)
     EditText etDealName;
-    @BindView(R.id.etMinUsers)
-    EditText etMinUsers;
-    @BindView(R.id.etMaxQuantity)
-    EditText etMaxQuantity;
     @BindView(R.id.etActualPrice)
     EditText etActualPrice;
     @BindView(R.id.etOfferPrice)
     EditText etOfferPrice;
-    @BindView(R.id.etpricefortwo)
-    EditText etpricefortwo;
-    @BindView(R.id.etpriceforthree)
-    EditText etpriceforx;
+    @BindView(R.id.etcashbackperuser)
+    EditText etcashbackperuser;
     @BindView(R.id.tvTotalGroups)
     TextView tvTotalGroups;
 
@@ -1087,8 +1080,8 @@ public class AddAdvertisement extends BaseActivity implements CallBackRecyclerIt
         }else  if (etOfferPrice.getText().toString().trim().length() <= 0) {
             Utils.setEditTextError(etOfferPrice, getResources().getString(R.string.validationOfferPrice));
             return false;
-        }else  if (etpricefortwo.getText().toString().trim().length() <= 0) {
-            Utils.setEditTextError(etpricefortwo, getResources().getString(R.string.validationcostfortwo));
+        } else if (etcashbackperuser.getText().toString().trim().length() <= 0) {
+            Utils.setEditTextError(etcashbackperuser, getResources().getString(R.string.validationcostfortwo));
             return false;
         }else  if (etDetails.getText().toString().trim().length() <= 0) {
             Utils.setEditTextError(etDetails, getResources().getString(R.string.validationDealDetails));
@@ -1100,11 +1093,6 @@ public class AddAdvertisement extends BaseActivity implements CallBackRecyclerIt
         } else if (etEnds.getText().toString().trim().length() <= 0) {
             Utils.showShortToast(AddAdvertisement.this, getResources().getString(R.string.validationEndDate));
             return false;
-        } else if (etMinUsers.getText().toString().trim().length() <= 0) {
-            Utils.setEditTextError(etMinUsers, getResources().getString(R.string.validationMinUsers));
-            return false;
-        } else if(etMaxQuantity.getText().toString().trim().length() <= 0){
-            Utils.setEditTextError(etMaxQuantity, "Please enter maximum quantity per user");
         } else if (!isEdit && uriImageList.size() == 0) {
             Utils.showShortToast(AddAdvertisement.this, getResources().getString(R.string.validationPhoto));
             return false;

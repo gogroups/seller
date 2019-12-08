@@ -104,9 +104,9 @@ public class SellerAdvertisementResponse implements Parcelable {
     @SerializedName("offer_price")
     @Expose
     String offerPrice;
-    @SerializedName("offerfortwo")
+    @SerializedName("csahback_per_user")
     @Expose
-    String costfortwo;
+    String cashbackperuser;
 
     @SerializedName("advertisement_name")
     @Expose
@@ -199,18 +199,9 @@ public class SellerAdvertisementResponse implements Parcelable {
     @Expose
     String activeStatus;
 
-    @SerializedName("offerforx")
-    @Expose
-    String costfor_x;
-
     @SerializedName("is_approved")
     @Expose
     int is_approved;
-
-
-    public String getCostforx(){return costfor_x;}
-
-    public void setCostforx(){this.costfor_x = costfor_x;}
 
     public Integer getIsRatingOption() {
         return isRatingOption;
@@ -335,8 +326,8 @@ public class SellerAdvertisementResponse implements Parcelable {
         return offerPrice;
     }
 
-    public String getCostfortwo() {
-        return costfortwo;
+    public String getCashbackperuser() {
+        return cashbackperuser;
     }
 
     public String getAdvertisementName() {
@@ -526,7 +517,7 @@ public class SellerAdvertisementResponse implements Parcelable {
         dest.writeValue(this.favourite);
         dest.writeString(this.advertisementDetails);
         dest.writeString(this.actualPrice);
-        dest.writeString(this.costfortwo);
+        dest.writeString(this.cashbackperuser);
         dest.writeValue(this.rating);
         dest.writeValue(this.selfRating);
         dest.writeString(this.likedcount);
@@ -563,7 +554,7 @@ public class SellerAdvertisementResponse implements Parcelable {
         dest.writeTypedList(this.imagesDetails);
         dest.writeString(this.activeStatus);
         //dest.writeString(this.adStatus);
-        dest.writeString(this.costfor_x);
+        //dest.writeString(this.costfor_x);
         dest.writeInt(this.is_approved);
     }
 
@@ -579,7 +570,7 @@ public class SellerAdvertisementResponse implements Parcelable {
         this.favourite = (Integer) in.readValue(Integer.class.getClassLoader());
         this.advertisementDetails = in.readString();
         this.actualPrice = in.readString();
-        this.costfortwo = in.readString();
+        this.cashbackperuser = in.readString();
         this.rating = (Float) in.readValue(Float.class.getClassLoader());
         this.selfRating = (Float) in.readValue(Float.class.getClassLoader());
         this.likedcount = in.readString();
@@ -616,7 +607,6 @@ public class SellerAdvertisementResponse implements Parcelable {
         this.imagesDetails = in.createTypedArrayList(ImageResponse.CREATOR);
         this.activeStatus = in.readString();
         //this.adStatus=in.readString();
-        this.costfor_x=in.readString();
         this.is_approved = in.readInt();
     }
 

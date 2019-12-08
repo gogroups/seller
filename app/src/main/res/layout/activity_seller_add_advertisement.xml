@@ -299,39 +299,12 @@
                     android:orientation="vertical">
 
                     <EditText
-                        android:id="@+id/etpricefortwo"
+                        android:id="@+id/etcashbackperuser"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@null"
                         android:gravity="center_vertical"
-                        android:hint="@string/pricefortwo"
-                        android:inputType="number"
-                        android:minHeight="42dp"
-                        android:paddingLeft="10dp"
-                        android:textSize="@dimen/text_forteen" />
-
-                </LinearLayout>
-
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/blur_black_color" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:minHeight="42dp"
-                    android:orientation="vertical">
-
-                    <EditText
-                        android:id="@+id/etpriceforthree"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@null"
-                        android:gravity="center_vertical"
-                        android:hint="Cost For X"
+                        android:hint="Cashback per user"
                         android:inputType="number"
                         android:minHeight="42dp"
                         android:paddingLeft="10dp"
@@ -360,7 +333,6 @@
                         android:hint="You can add a URL from any valid website to describe your product.
                                        Eg. www.amazon.in/...."
                         android:inputType="textMultiLine"
-                        android:minLines="5"
                         android:paddingLeft="10dp"
                         android:scrollbarAlwaysDrawVerticalTrack="true"
                         android:scrollbars="vertical"
@@ -462,56 +434,6 @@
 
                 </LinearLayout>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/blur_black_color" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <EditText
-                        android:id="@+id/etMinUsers"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@null"
-                        android:gravity="center_vertical"
-                        android:hint="@string/minUsers"
-                        android:imeOptions="actionDone"
-                        android:inputType="number"
-                        android:minHeight="42dp"
-                        android:paddingLeft="10dp"
-                        android:textSize="@dimen/text_forteen" />
-
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/blur_black_color" />
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <EditText
-                        android:id="@+id/etMaxQuantity"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@null"
-                        android:gravity="center_vertical"
-                        android:hint="Maximum quantity per user"
-                        android:imeOptions="actionDone"
-                        android:inputType="number"
-                        android:minHeight="42dp"
-                        android:paddingLeft="10dp"
-                        android:textSize="@dimen/text_forteen" />
-
-                </LinearLayout>
 
                 <TextView
                     android:layout_width="match_parent"

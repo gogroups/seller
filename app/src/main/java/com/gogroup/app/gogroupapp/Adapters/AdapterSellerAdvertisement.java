@@ -1,7 +1,6 @@
 package com.gogroup.app.gogroupapp.Adapters;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
@@ -16,7 +15,6 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.gogroup.app.gogroupapp.CallBackListeners.CallBackApi;
 import com.gogroup.app.gogroupapp.CallBackListeners.CallBackOnLoadMore;
@@ -26,7 +24,6 @@ import com.gogroup.app.gogroupapp.HelperClasses.RestClient;
 import com.gogroup.app.gogroupapp.HelperClasses.UserPreferences;
 import com.gogroup.app.gogroupapp.HelperClasses.Utils;
 import com.gogroup.app.gogroupapp.R;
-import com.gogroup.app.gogroupapp.Responses.ListResponse;
 import com.gogroup.app.gogroupapp.Responses.PostResponse;
 import com.gogroup.app.gogroupapp.Responses.SellerAdvertisementResponse;
 import com.gogroup.app.gogroupapp.Seller.SellerAddDetailActivity;
@@ -39,9 +36,7 @@ import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 import retrofit2.Call;
-import retrofit2.Callback;
 import retrofit2.Response;
 
 /**
@@ -205,9 +200,10 @@ public class AdapterSellerAdvertisement extends RecyclerView.Adapter {
             myViewHolder.tvLikes.setText(item.getLikedcount());
             myViewHolder.tvActualPrice.setText(item.getActualPrice());
             myViewHolder.tvOfferPrice.setText(item.getOfferPrice());
-            myViewHolder.tvpricefortwo.setText(item.getCostfortwo());
+            myViewHolder.cashbackuser.setText(item.getCashbackperuser());
             myViewHolder.tvx.setText(item.getMinUserCount()+" : ");
-            myViewHolder.tvpriceforx.setText(item.getCostforx());
+            int oferPrice = Integer.parseInt(item.getActualPrice()) - Integer.parseInt(item.getOfferPrice());
+            myViewHolder.maxcashback.setText(String.valueOf(oferPrice));
 
 //            myViewHolder.tvTotalPurchased.setText((!isUser ? item.getOrderPlacedCount() + "/" : "") + item.getPurchasedCount());
             myViewHolder.tvTotalPurchased.setText((!isUser ? item.getOrderPlacedCount() : item.getPurchasedCount()));
@@ -400,8 +396,8 @@ public class AdapterSellerAdvertisement extends RecyclerView.Adapter {
         TextView tvActualPrice;
         @BindView(R.id.tvOfferPrice)
         TextView tvOfferPrice;
-        @BindView(R.id.tvpricefortwo)
-        TextView tvpricefortwo;
+        @BindView(R.id.cashbackuser)
+        TextView cashbackuser;
         @BindView(R.id.imgLike)
         ImageView imgLike;
         @BindView(R.id.view)
@@ -410,8 +406,8 @@ public class AdapterSellerAdvertisement extends RecyclerView.Adapter {
         Switch toggleStatus;
         @BindView(R.id.tvx)
         TextView tvx;
-        @BindView(R.id.tvpriceforX)
-        TextView tvpriceforx;
+        @BindView(R.id.maxcashback)
+        TextView maxcashback;
 
         public MyViewHolder(View view) {
             super(view);

@@ -257,7 +257,7 @@ public class SellerAddDetailActivity extends BaseActivity implements CallBackRep
         tvActualPrice.setText(selectedAds.getActualPrice());
         tvOfferPrice.setText(selectedAds.getOfferPrice());
         tvLocation.setText(selectedAds.getLocation());
-        tvpricefortwo.setText(selectedAds.getCostfortwo());
+        cashbackperuser.setText(selectedAds.getCashbackperuser());
 
 
         tvDate.setText("Valid from: " + selectedAds.getStartDate() + " - " + selectedAds.getEndDate());
@@ -747,7 +747,7 @@ public class SellerAddDetailActivity extends BaseActivity implements CallBackRep
                 tvDealDetails.setText(info[11]);
                 tvActualPrice.setText(info[12]);
                 tvOfferPrice.setText(info[13]);
-                tvpricefortwo.setText(info[14]);
+                cashbackperuser.setText(info[14]);
 
 
 
@@ -866,8 +866,8 @@ public class SellerAddDetailActivity extends BaseActivity implements CallBackRep
     TextView tvOfferPrice;
     @BindView(R.id.tvActualPrice)
     TextView tvActualPrice;
-    @BindView(R.id.tvpricefortwo)
-    TextView tvpricefortwo;
+    @BindView(R.id.cashbackuser)
+    TextView cashbackperuser;
     @BindView(R.id.tvContact)
     TextView tvContact;
     @BindView(R.id.tvLikes)

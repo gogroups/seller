@@ -232,7 +232,7 @@
                         android:textSize="@dimen/defaultSize" />
 
                     <TextView
-                        android:id="@+id/tvpricefortwo"
+                        android:id="@+id/cashbackuser"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
@@ -251,7 +251,7 @@
                         android:id="@+id/tvMinUsers"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/minUsers2"
+                        android:text="@string/maxcashback"
                         android:textColor="@color/gray6"
                         android:textSize="@dimen/defaultSize" />
 
